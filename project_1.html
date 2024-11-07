@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: Safetube</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="detailpage_style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            Go Back
+        </a>
+
+        <header class="project-header">
+            <h1 class="project-title">Safetube</h1>
+            <div class="project-meta">
+                <div class="project-meta-item">
+                    <i class="fas fa-calendar"></i>
+                    <span>Completion Date: May 2024</span>
+                </div>
+                <div class="project-meta-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Duration: 2 months</span>
+                </div>
+                <div class="project-meta-item">
+                    <i class="fas fa-users"></i>
+                    <span>Team members: 1</span>
+                </div>
+            </div>
+            <div class="project-links">
+                <a href="https://chromewebstore.google.com/detail/safetube/ncbcooggibgjfoioemnbhpfkfindkmng" class="project-link">
+                    <i class="fas fa-link"></i>
+                    Extension Link
+                </a>
+                <a href="https://www.youtube.com/watch?v=mqvslJPVWo8" class="project-link">
+                    <i class="fab fa-youtube"></i>
+                    Video Link
+                </a>
+            </div>
+        </header>
+
+        <div class="project-gallery">
+            <img src="safetube_detail.png" alt="Proje Ana Görsel" class="gallery-main">
+            <div class="gallery-thumbs">
+                <img src="safetube_detail1.png" alt="Detay 1" class="gallery-thumb">
+                <img src="safetube_detail2.png" alt="Detay 2" class="gallery-thumb">
+                <img src="safetube_detail3.png" alt="Detay 3" class="gallery-thumb">
+                <img src="safetube_detail4.png" alt="Detay 4" class="gallery-thumb">
+            </div>
+        </div>
+
+        <div class="project-content">
+            <div class="project-section">
+                <h2>About Project</h2>
+                <strong>This project is my graduation project and it came 4th in the competition.</strong>
+                <br>
+                <strong>**The project's server is not currently live.**</strong>
+                <p>- The project is used via the chrome extension that I have created. </p>
+                <p>- While you are in the Youtube video tab, you open the extension and click the test button. </p>
+                <p>- With this button, I send a post request to my fastapi server running on gcp using javascript for the youtube link. </p>
+                <p>- Thanks to this link coming to my server, I pull the subtitles of that video using the python library and make them suitable for inserting into my ai model. </p>
+                <p>- If I talk about these models, these models have 5 output classes. Profanity, racism, sexism, insult and none. </p>
+                <p>- I prepared the dataset myself according to these output values. This dataset contains approximately 60 thousand rows. </p>
+                <p>- I trained 3 models with this dataset. These are svc, lstm and the bert model that I fine-tuned. </p>
+                <p>- I insert the sentences spoken in the video into these 3 models and have them decide with the voting system. </p>
+                <p>- The operations as NLP are up to this point. For image classification, I download the video in the youtube link to which the post request is sent to the server. </p>
+                <p>- Then I send the images to my model at 10 frames per second. The model I used here is YOLOV8m. I downloaded the dataset I used from kaggle. </p>
+                <p>- It contains about 5 thousand knife and gun photos. After the ai processes are completed, database processes start. I do it to save some statistics like how many videos i processed etc. </p>
+                <p>- I use mongodb as a database. Finally, a unique endpoint is created. This endpoint is the youtube video unique id that I extracted from the link in the request. </p>
+                <p>- Then I return this endpoint as the response of the post request that was sent at the beginning and we can access it from the chrome extension.</p>
+                <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">NLP</span>
+                <span class="tag">FastAPI</span>
+                <span class="tag">Pytorch</span>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">LLM</span>
+                <span class="tag">Data mining</span>
+                <span class="tag">Gcp</span>
+                <span class="tag">Yolov8</span>
+                <span class="tag">MongoDB</span>
+                </div>
+            </div>
+
+            <div class="project-section">
+                <h2>Features</h2>
+                <ul class="features-list">
+                    <li class="feature-item">
+                        <i class="fas fa-shopping-cart feature-icon"></i>
+                        <div>
+                            <strong>Currently On Chrome Market</strong>
+                            <p>You can download the extension.</p>
+                        </div>
+                    </li>
+                    <li class="feature-item">
+                        <i class="fas fa-user feature-icon"></i>
+                        <div>
+                            <strong>Easy to Use</strong>
+                            <p>Test your videos by one click on the extension</p>
+                        </div>
+                    </li>
+                    <li class="feature-item">
+                        <i class="fas fa-search feature-icon"></i>
+                        <div>
+                            <strong>Unlimited Videos</strong>
+                            <p>Almost every video has subtitles which created automatically</p>
+                        </div>
+                    </li>
+                    <li class="feature-item">
+                        <i class="fas fa-mobile-alt feature-icon"></i>
+                        <div>
+                            <strong>Coming To Mobile Stores</strong>
+                            <p>I'm working on making an app for the phones.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="project-section">
+                <h2>Technical Details</h2>
+                <p>The technical infrastructure of the project was created using modern technologies:</p>
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <li>Frontend: Made using HTML, CSS and JS via Fastapi Jinja Templates</li>
+                    <li>Backend: Developed RESTful API using FastAPI</li>
+                    <li>Database: MongoDB</li>
+                    <li>Ai models: SVC, Bert, LSTM, Yolov8m</li>
+                    <li>Deployment: Google Cloud Platform</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Gallery functionality
+        const mainImage = document.querySelector('.gallery-main');
+        const thumbs = document.querySelectorAll('.gallery-thumb');
+
+        thumbs.forEach(thumb => {
+            thumb.addEventListener('click', () => {
+                const newSrc = thumb.src;
+                const oldSrc = mainImage.src;
+                mainImage.src = newSrc;
+                thumb.src = oldSrc;
+            });
+        });
+    </script>
+</body>
+</html>

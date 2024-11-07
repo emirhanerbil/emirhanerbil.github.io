@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: Chatbot with RAG</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="detailpage_style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            Go Back
+        </a>
+
+        <header class="project-header">
+            <h1 class="project-title">Chatbot with RAG</h1>
+            <div class="project-meta">
+                <div class="project-meta-item">
+                    <i class="fas fa-calendar"></i>
+                    <span>Completion Date: Jul 2024</span>
+                </div>
+                <div class="project-meta-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Duration: 15 day</span>
+                </div>
+                <div class="project-meta-item">
+                    <i class="fas fa-users"></i>
+                    <span>Team members: 1</span>
+                </div>
+            </div>
+            <div class="project-links">
+                <a href="https://www.youtube.com/watch?v=8FaiI-pQkJs" class="project-link">
+                    <i class="fab fa-youtube"></i>
+                    Video Link
+                </a>
+            </div>
+        </header>
+
+        <div class="project-gallery">
+            <img src="rag_1.png" alt="Proje Ana Görsel" class="gallery-main">
+            <div class="gallery-thumbs">
+
+            </div>
+        </div>
+
+        <div class="project-content">
+            <div class="project-section">
+                <h2>About Project</h2>
+                <p>- Sometimes fine-tuning a chatbot according to our own questions can be costly and time-consuming.</p>
+                <p>- Then the rag approach comes into play.</p>
+                <p>- Here, instead of fine-tuning the entire llm, we give the relevant paragraphs from our information source to llm and ask it to answer this question in this context.</p>
+                <p>- In order to understand which paragraphs are relevant, we divide the entire pdf into pieces called chunks.</p>
+                <p>- Then, we convert these chunks to vectors using the embedding model and save them to the database if we want. </p>
+                <p>- After converting the question asked to vectors in the same way, we do vector search between the chunk vectors and question vectors. </p>
+                <p>- We get the best 3 results and send these chunks to llm and have it answer the question. </p>
+                <p>- My llm preference was llama3. </p>
+                <p>- Because those who do this project usually use Open Ai or some paid vector search sites. </p>
+                <p>- Since I wanted what I did to work locally and completely free, I preferred llama3 as llm and bge-m3, which is found in huggingface, as the embedding model. </p>
+                <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">NLP</span>
+                <span class="tag">Gradio</span>
+                <span class="tag">Llama3</span>
+                <span class="tag">Embedding Model</span>
+                <span class="tag">LLM</span>
+                <span class="tag">Vector Search</span>
+                <span class="tag">Chatbot</span>
+                <span class="tag">RAG</span>
+                </div>
+            </div>
+
+            <div class="project-section">
+                <h2>Features</h2>
+                <ul class="features-list">
+                    <li class="feature-item">
+                        <i class="fas fa-shopping-cart feature-icon"></i>
+                        <div>
+                            <strong>Can work locally</strong>
+                            <p>Thanks to llama3 we can use it for free</p>
+                        </div>
+                    </li>
+                    <li class="feature-item">
+                        <i class="fas fa-user feature-icon"></i>
+                        <div>
+                            <strong>Easy to Use</strong>
+                            <p>It has user-friendly interface thanks to Gradio</p>
+                        </div>
+                    </li>
+                    <li class="feature-item">
+                        <i class="fas fa-search feature-icon"></i>
+                        <div>
+                            <strong>Chat with your documents</strong>
+                            <p>You can upload as many pdfs as you want and ask them questions.</p>
+                        </div>
+                    </li>
+                    <li class="feature-item">
+                        <i class="fas fa-bolt feature-icon"></i>
+                        <div>
+                            <strong>Quick answers</strong>
+                            <p>Responds in approximately 5 seconds</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="project-section">
+                <h2>Technical Details</h2>
+                <p>The technical infrastructure of the project was created using modern technologies:</p>
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <li>Frontend: Gradio</li>
+                    <li>Backend: Gradio</li>
+                    <li>Database: MongoDB</li>
+                    <li>LLM model: Llama</li>
+                    <li>Embedding model: Bge-m3</li>
+                    <li>Deployment: Google Colab</li>
+                    <li>Gpu: Nvidia T4 GPU</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Gallery functionality
+        const mainImage = document.querySelector('.gallery-main');
+        const thumbs = document.querySelectorAll('.gallery-thumb');
+
+        thumbs.forEach(thumb => {
+            thumb.addEventListener('click', () => {
+                const newSrc = thumb.src;
+                const oldSrc = mainImage.src;
+                mainImage.src = newSrc;
+                thumb.src = oldSrc;
+            });
+        });
+    </script>
+</body>
+</html>
