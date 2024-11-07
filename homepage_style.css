@@ -148,7 +148,7 @@ h2 {
 }
 
 .project-links a:visited {
-    color: rgb(74, 144, 226) !important;
+    color: rgb(235, 241, 248) !important;
 }
 
 .project-links a:hover {
@@ -182,8 +182,8 @@ a, u {
     text-decoration: none;
   }
 
-.project-content a:visited {
-    color: inherit;
+.project-content a {
+    color: white;
 }
 
 
