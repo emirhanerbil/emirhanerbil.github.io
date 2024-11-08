@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Music Bot</title>
+    <link rel="icon" type="image/x-icon" href="faviconn.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="detailpage_style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            Go Back
+        </a>
+
+        <header class="project-header">
+            <h1 class="project-title">Discord Music Bot</h1>
+            <div class="project-meta">
+                <div class="project-meta-item">
+                    <i class="fas fa-calendar"></i>
+                    <span>Completion Date: Jul 2024</span>
+                </div>
+                <div class="project-meta-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Duration: 15 day</span>
+                </div>
+                <div class="project-meta-item">
+                    <i class="fas fa-users"></i>
+                    <span>Team members: 1</span>
+                </div>
+            </div>
+            <div class="project-links">
+                <a href="https://www.youtube.com/watch?v=mtosQSQ6liA" class="project-link">
+                    <i class="fab fa-youtube"></i>
+                    Video Link
+                </a>
+            </div>
+        </header>
+
+        <div class="project-gallery">
+            <img src="discord.png" alt="Proje Ana Görsel" class="gallery-main">
+            <div class="gallery-thumbs">
+                <img src="discord_1.png" alt="Detay 1" class="gallery-thumb">
+                <img src="discord_2.png" alt="Detay 1" class="gallery-thumb">
+                <img src="discord_3.png" alt="Detay 1" class="gallery-thumb">
+            </div>
+        </div>
+
+        <div class="project-content">
+            <div class="project-section">
+                <h2>About Project</h2>
+                <p>- Most discord music bots can no longer play music or videos from youtube.</p>
+                <p>- I decided to do this to find a solution to this.</p>
+                <p>- I rented a server on GCP and I download the audio of the YouTube videos in the incoming link with a library and transmit the audio with ffmpeg.</p>
+                <p>- This link can even be a playlist. It understands that it is a playlist and adds other songs to the queue. Or you can add songs to the queue by continuously typing !play</p>
+                <p>- Thanks to GCP's download speed, videos play much faster than most bots </p>
+                <p>- Can also play shorts </p>
+                <p>- For the bot to work, !play works as a link or !play "query". </p>
+                <p>- Sometimes it is difficult to find the link of the song we want and give it to the bot. That's why I set it to work without a link. </p>
+                <p>- After typing !play, you enter the song or video name you want. Using the YouTube API, the bot sends the first 5 results on YouTube as a message on Discord and waits for you to enter the order of which one you want to choose. </p>
+                <p>- For example, if you type 3, the music in the 3rd result starts playing. </p>
+                <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">Youtube API</span>
+                <span class="tag">GCP</span>
+                <span class="tag">Discord</span>
+                <span class="tag">Ffmpeg</span>
+                </div>
+            </div>
+
+            <div class="project-section">
+                <h2>Features</h2>
+                <ul class="features-list">
+                    <li class="feature-item">
+                        <i class="fas fa-shopping-cart feature-icon"></i>
+                        <div>
+                            <strong>It's free</strong>
+                            <p>You can add this bot to your server for free</p>
+                        </div>
+                    </li>
+                    <li class="feature-item">
+                        <i class="fas fa-user feature-icon"></i>
+                        <div>
+                            <strong>Easy to Use</strong>
+                            <p>It has user-friendly interface thanks to Gradio</p>
+                        </div>
+                    </li>
+                    <li class="feature-item">
+                        <i class="fas fa-stream feature-icon"></i>
+                        <div>
+                            <strong>You can queue your songs</strong>
+                            <p>If you want to skip the song, you can type !skip and go to the next song.Thanks to the queue structure</p>
+                        </div>
+                    </li>
+                    <li class="feature-item">
+                        <i class="fas fa-bolt feature-icon"></i>
+                        <div>
+                            <strong>Instant play</strong>
+                            <p>Since the host is on gcp, the songs play instantly, no wait.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="project-section">
+                <h2>Technical Details</h2>
+                <p>The technical infrastructure of the project was created using modern technologies:</p>
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <li>Used APIs: Youtube API</li>
+                    <li>Language: Python</li>
+                    <li>Deployment: Google Cloud Platform</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Gallery functionality
+        const mainImage = document.querySelector('.gallery-main');
+        const thumbs = document.querySelectorAll('.gallery-thumb');
+
+        thumbs.forEach(thumb => {
+            thumb.addEventListener('click', () => {
+                const newSrc = thumb.src;
+                const oldSrc = mainImage.src;
+                mainImage.src = newSrc;
+                thumb.src = oldSrc;
+            });
+        });
+    </script>
+</body>
+</html>
