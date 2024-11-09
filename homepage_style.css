@@ -491,7 +491,7 @@ a, u {
     .experience-item {
         width: calc(110% - 60px);
         float: left;
-        margin-left: 10px;
+        margin-left: 15px;
     }
 
     .experience-item::before {
